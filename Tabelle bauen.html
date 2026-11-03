@@ -1,0 +1,68 @@
+
+<!-- saved from url=(0043)https://kebanh.github.io/Quersummenrechner/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Tabelle bauen</title>
+			
+		
+		<script>
+			"use strict";
+			function programm() {
+			// Quellcode
+
+			var vStart;
+			var vAusgabe;
+			var vEnde;	
+			var vQuersumme;
+			var vQuadrat;
+			var vTeiler;
+
+			
+			vStart =parseFloat(document.getElementById("idStart").value);
+			vEnde =document.getElementById("idEnde").value;
+			vTeiler=document.getElementById("idTeiler").value;
+			
+			
+			
+			vAusgabe = "";
+			vAusgabe = vAusgabe + "<table border=1>";
+			vAusgabe = vAusgabe + "<tr><th>Zahl</th><th>Quadrat</th><th>Quersumme</th></tr>";
+	
+			while (vStart<=vEnde) {
+				
+				vQuadrat = vStart * vStart;
+				vQuersumme=vStart + vQuadrat;		
+				
+				if(vQuersumme%vTeiler==0){
+				
+				vAusgabe = vAusgabe + "<tr><td>" + vStart + "</td><td>" + vQuadrat + "</td><td style=Background-color:green>" + vQuersumme + "</td></tr>";
+
+				}
+				
+				else {
+				vAusgabe = vAusgabe + "<tr><td>" + vStart + "</td><td>" + vQuadrat + "</td><td>" + vQuersumme + "</td></tr>";
+}
+			vStart++;;
+}
+			vAusgabe = vAusgabe + "</table>";
+
+			document.getElementById("idAusgabe").innerHTML= vAusgabe;
+		}
+
+		</script></head>
+		
+
+
+	<body>
+		
+		<h1>Mathematische Funktion (Wertetabelle) </h1>
+		
+		 Start <input id="idStart" type="text" value="5"><br>
+		
+       Ende <input id="idEnde" type="text" value="20">
+	   Zahl teilbar durch Quersumme: <input id="idTeiler" type="text" value="">
+		
+		<button onclick="programm();">Wertetabelle erzeugen!</button><br><br>
+        <div id="idAusgabe"><table border="1"><tbody><tr><th>Zahl</th><th>Quadrat</th><th>Quersumme</th></tr><tr><td>1</td><td>1</td><td>2</td></tr><tr><td>2</td><td>4</td><td>6</td></tr><tr><td>3</td><td>9</td><td style="Background-color:green">12</td></tr><tr><td>4</td><td>16</td><td style="Background-color:green">20</td></tr><tr><td>5</td><td>25</td><td>30</td></tr><tr><td>6</td><td>36</td><td>42</td></tr><tr><td>7</td><td>49</td><td style="Background-color:green">56</td></tr><tr><td>8</td><td>64</td><td style="Background-color:green">72</td></tr><tr><td>9</td><td>81</td><td>90</td></tr><tr><td>10</td><td>100</td><td>110</td></tr><tr><td>11</td><td>121</td><td style="Background-color:green">132</td></tr><tr><td>12</td><td>144</td><td style="Background-color:green">156</td></tr><tr><td>13</td><td>169</td><td>182</td></tr><tr><td>14</td><td>196</td><td>210</td></tr><tr><td>15</td><td>225</td><td style="Background-color:green">240</td></tr><tr><td>16</td><td>256</td><td style="Background-color:green">272</td></tr><tr><td>17</td><td>289</td><td>306</td></tr><tr><td>18</td><td>324</td><td>342</td></tr><tr><td>19</td><td>361</td><td style="Background-color:green">380</td></tr><tr><td>20</td><td>400</td><td style="Background-color:green">420</td></tr></tbody></table></div>
+	
+
+</body></html>
